@@ -33,6 +33,7 @@ public class Bus extends Transport implements Competing {
 
     @Override
     public int getBestLapTime() {
+
         return  ThreadLocalRandom.current().nextInt();
     }
 
@@ -40,4 +41,20 @@ public class Bus extends Transport implements Competing {
     public int getMaxSpeed() {
         return  ThreadLocalRandom.current().nextInt();
     }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+
 }
