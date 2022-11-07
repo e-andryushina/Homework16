@@ -30,6 +30,15 @@ public abstract class Transport {
     }
 
     @Override
+    public String toString() {
+        return "Transport{" +
+                "carBrand='" + carBrand + '\'' +
+                ", carModel='" + carModel + '\'' +
+                ", engineVolume=" + engineVolume +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
