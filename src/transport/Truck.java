@@ -1,11 +1,17 @@
 package transport;
 
+import persons.DriverD;
+import persons.Mechanic;
+import persons.Sponsor;
+
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Truck extends Transport implements Competing {
 
-    public Truck(String carBrand, String carModel, double engineVolume) {
-        super(carBrand, carModel, engineVolume);
+    public Truck(String carBrand, String carModel, double engineVolume,
+                 DriverD driverD, List<Mechanic> mechanics, List<Sponsor> sponsors) {
+        super(carBrand, carModel, engineVolume, driverD, mechanics, sponsors);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package driver;
+package persons;
 
 import transport.Car;
 

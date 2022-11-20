@@ -1,11 +1,18 @@
 package transport;
 
+import persons.Driver;
+import persons.DriverD;
+import persons.Mechanic;
+import persons.Sponsor;
+
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Bus extends Transport implements Competing {
 
-    public Bus(String carBrand, String carModel, double engineVolume) {
-        super(carBrand, carModel, engineVolume);
+    public Bus(String carBrand, String carModel, double engineVolume,
+               DriverD driverD, List<Mechanic> mechanics, List<Sponsor> sponsors) {
+        super(carBrand, carModel, engineVolume, driverD, mechanics, sponsors);
     }
 
     @Override
@@ -21,7 +28,6 @@ public class Bus extends Transport implements Competing {
                 this.getCarBrand(),
                 this.getCarModel());
     }
-
 
     @Override
     public void pitStop() {

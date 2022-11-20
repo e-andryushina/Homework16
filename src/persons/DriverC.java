@@ -1,10 +1,10 @@
-package driver;
+package persons;
 
-import transport.Bus;
+import transport.Truck;
+public class DriverC extends Driver <Truck> {
 
-public class DriverD extends Driver <Bus>{
-    public DriverD(String fullName, int drivingExperience, Bus car) {
-        super(fullName, "D", drivingExperience, car);
+    public DriverC(String fullName, int drivingExperience, Truck car) {
+        super(fullName, "C", drivingExperience, car);
     }
 
     @Override

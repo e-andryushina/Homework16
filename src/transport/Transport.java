@@ -1,16 +1,30 @@
 package transport;
 
+import persons.Driver;
+import persons.Mechanic;
+import persons.Sponsor;
+
+import java.util.List;
 import java.util.Objects;
 
 public abstract class Transport {
     private final String carBrand;
     private final String carModel;
     private final double engineVolume;
+    private final Driver driver;
+    private final List <Mechanic> mechanics;
+    private final List <Sponsor> sponsors;
 
-    protected Transport(String carBrand, String carModel, double engineVolume) {
+
+
+    protected Transport(String carBrand, String carModel, double engineVolume,
+                        Driver driver, List<Mechanic> mechanics, List<Sponsor> sponsors) {
         this.carBrand = carBrand;
         this.carModel = carModel;
         this.engineVolume = engineVolume;
+        this.driver = driver;
+        this.mechanics = mechanics;
+        this.sponsors = sponsors;
     }
 
     public abstract void startMovement ();
@@ -27,6 +41,16 @@ public abstract class Transport {
 
     public double getEngineVolume() {
         return engineVolume;
+    }
+
+    public void getPersonInfo () {
+        System.out.println("Водитель: " + driver.getFullName());
+        for (Sponsor sponsor : sponsors) {
+            System.out.println(sponsor);
+        }
+        for (Mechanic mechanic : mechanics) {
+            System.out.println(mechanic);
+        }
     }
 
     @Override
