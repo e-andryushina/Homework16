@@ -1,0 +1,65 @@
+package transport;
+
+import persons.DriverD;
+import persons.Mechanic;
+import persons.Sponsor;
+
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+
+public class Truck extends Transport implements Competing {
+
+    public Truck(String carBrand, String carModel, double engineVolume,
+                 DriverD driverD, List<Mechanic> mechanics, List<Sponsor> sponsors) {
+        super(carBrand, carModel, engineVolume, driverD, mechanics, sponsors);
+    }
+
+    @Override
+    public void startMovement() {
+        System.out.printf("Грузовик %s %s начал движение",
+                this.getCarBrand(),
+                this.getCarModel());
+    }
+
+    @Override
+    public void endMovement() {
+        System.out.printf("Грузовик %s %s закончил движение",
+                this.getCarBrand(),
+                this.getCarModel());
+    }
+
+    @Override
+    public void pitStop() {
+        System.out.printf("Грузовик %s %s совершил пит-стоп",
+                this.getCarBrand(),
+                this.getCarModel());
+
+    }
+
+    @Override
+    public int getBestLapTime() {
+      return  ThreadLocalRandom.current().nextInt();
+    }
+
+    @Override
+    public int getMaxSpeed() {
+        return  ThreadLocalRandom.current().nextInt();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+
+}
